@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 # Create your views here.
 def index(request):
-    return render(request, 'photos/index.html')
+    return render(request, 'photos/index-flowermarketbooks..html')
 
 def gallery(request):
     return render(request, 'photos/gallery.html')
