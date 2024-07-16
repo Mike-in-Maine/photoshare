@@ -10,26 +10,12 @@
 <style>
     h1, h3 {
         font-family: 'Kanit';
-        /* Specify fallback fonts if 'Roboto' is not available */
+        /* Specify fallback fonts if 'Kanit' is not available */
     }
 </style>
-
-
 </head>
 <body>
-    <header class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">My Logo</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Login</a>
-                </li>
-            </ul>
-        </div>
-    </header>
+    {% if request.path != '/' %}
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             {% block breadcrumbs %}
@@ -37,6 +23,7 @@
             {% endblock %}
         </ol>
     </nav>
+    {% endif %}
     <div class="container">
         {% block content %}
         <!-- Page content goes here -->
