@@ -4,6 +4,7 @@ from .models import Image
 from django.http import HttpResponse
 import os
 
+
 # Create your views here.
 def index(request):
     return render(request, 'pages/index.html')
@@ -26,8 +27,8 @@ def addPhoto(request):
     img = Image.objects.all()
     return render(request, "pages/add.html", {"img": img, "form": form})
 
-def importAlbum(request):
-    folder_path = 'path/to/your/venezia_mare_folder'
+def rename_images_in_folder(folder_path):
+
     # Extract the folder name
     folder_name = os.path.basename(os.path.normpath(folder_path))
 
@@ -52,7 +53,18 @@ def importAlbum(request):
 
         # Rename the file
         os.rename(old_file, new_file)
+
         print(f"Renamed '{old_file}' to '{new_file}'")
 
+
+def importAlbum(request):
+    if request.method == "POST":
+        folder_path = request.POST.get('folder_path')
+        if folder_path:
+            rename_images_in_folder(f'photos/templates/albums/'+folder_path)
+            return HttpResponse("Images renamed successfully!")
+        else:
+            return HttpResponse("Folder path is required.", status=400)
+    return render(request, 'add.html')
 
 

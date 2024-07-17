@@ -1,6 +1,15 @@
 {% extends "base.html" %}
-
 {% block content %}
+ <form method="POST" action="{% url 'importAlbum' %}">
+        {% csrf_token %}
+        <label for="folder_path">Folder NAME ONLY:</label>
+        <input type="text" id="folder_path" name="folder_path" required>
+        <button type="submit">Rename Images</button>
+    </form>
+
+#############################################
+
+
 <div class="container">
     <form action="." method="post" enctype="multipart/form-data">
         {% csrf_token %}
