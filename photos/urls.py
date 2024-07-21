@@ -8,5 +8,6 @@ urlpatterns = [
     path('photo/<str:pk>/', views.viewPhoto, name='photo'),
     path('add', views.addPhoto, name='add'),
     path('importAlbum', views.importAlbum, name='importAlbum'),
-    path('directory_tree', views.directory_tree_view, name='directory_tree')
+    path('index_flo', views.index_flo, name='index_flo'),
+
 ]
