@@ -9,5 +9,6 @@ urlpatterns = [
     path('add', views.addPhoto, name='add'),
     path('importAlbum', views.importAlbum, name='importAlbum'),
     path('index_flo', views.index_flo, name='index_flo'),
+    path('blog', views.blog, name='blog'),
 
 ]

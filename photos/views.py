@@ -30,6 +30,9 @@ def addPhoto(request):
 def index_flo(request):
     return render(request, 'pages/index_flo.html')
 
+def blog(request):
+    return render(request, 'pages/blog.html')
+
 def rename_images_in_folder(folder_path):
 
     # Extract the folder name
