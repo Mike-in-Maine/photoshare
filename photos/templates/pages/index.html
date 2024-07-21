@@ -1,6 +1,6 @@
 <!-- templates/index.html -->
 {% extends "base.html" %}
-
+{% load static %}
 {% block title %}Photo Share - Dusik2{% endblock %}
 
 {% block breadcrumbs %}
@@ -17,13 +17,13 @@
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="photoshare/photos/templates/albums/watercolors/watercolors_1.jpg" class="d-block w-100" alt="...">
+      <img src="{% static 'watercolors_2.jpg' %}" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="...">
+      <img src="{% static 'watercolors_1.jpg' %}" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="...">
+      <img src="{% static 'watercolors_3.jpg' %}" class="d-block w-100" alt="...">
     </div>
   </div>
 </div>

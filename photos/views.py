@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .form import ImageForm
 from .models import Image
 from django.http import HttpResponse
+from .utils import generate_directory_tree
 import os
 
 
@@ -66,5 +67,10 @@ def importAlbum(request):
         else:
             return HttpResponse("Folder path is required.", status=400)
     return render(request, 'add.html')
+
+def directory_tree_view(request):
+    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    tree = generate_directory_tree(base_dir)
+    return render(request, 'pages/directory_tree.html', {'tree': tree})
 
 

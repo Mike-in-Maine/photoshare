@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Directory Tree</title>
+    <style>
+        ul {
+            list-style-type: none;
+        }
+        ul li {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Directory Tree</h1>
+    <div>
+        {% load tree_extras %}
+        {{ tree|render_tree|safe }}
+    </div>
+</body>
+</html>
