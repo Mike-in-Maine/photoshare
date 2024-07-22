@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .form import ImageForm
-from .models import Image
+from .models import *
 from django.http import HttpResponse
 import os
 
